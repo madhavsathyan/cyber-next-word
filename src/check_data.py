@@ -1,0 +1,7 @@
+text = open("data/corpus.txt", encoding="utf-8").read()
+words = text.split()
+print("Descriptions:", text.count("\n") + 1)
+print("Total words:", len(words))
+print("Unique words:", len(set(words)))
+print()
+print(text[:600])
