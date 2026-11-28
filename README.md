@@ -36,6 +36,15 @@ most likely next word. The project compares SimpleRNN, LSTM and GRU models.
 - Integer labels used instead of one-hot to save memory
 
 ![Word frequency](results/word_frequency.png)
+## Models
+All three models share the same architecture and hyperparameters;
+only the recurrent layer changes.
+
+`Embedding(128) → [SimpleRNN | LSTM | GRU](128) → Dropout(0.3) → Dense(5000, softmax)`
+
+- Loss: sparse categorical cross-entropy
+- Optimizer: Adam (lr = 1e-3)
+- Metrics: top-1, top-3, top-5 accuracy (perplexity computed from loss)
 ## Project Progress
 - [x] Day 1: Data download and cleaning
 - [ ] Day 2: Tokenization and sequence creation
