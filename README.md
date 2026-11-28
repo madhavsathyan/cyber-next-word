@@ -27,6 +27,15 @@ most likely next word. The project compares SimpleRNN, LSTM and GRU models.
 | Total words | 344,512 |
 | Unique words | 18,991 |
 
+## Preprocessing
+- Full stops treated as separate tokens
+- 90/10 train/validation split by description (prevents leakage)
+- Vocabulary limited to top 5,000 words; others mapped to `<unk>`
+- Each description converted to (context → next word) examples
+  using up to 20 previous words, front-padded with zeros
+- Integer labels used instead of one-hot to save memory
+
+![Word frequency](results/word_frequency.png)
 ## Project Progress
 - [x] Day 1: Data download and cleaning
 - [ ] Day 2: Tokenization and sequence creation
